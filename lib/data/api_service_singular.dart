@@ -13,13 +13,12 @@ class ApiServiceSingular {
 
   Future<PokemonData?> getPokemonData() async {
     _pokemon = (await ApiService().getPokemons())!;
-
     try {
-      var url = Uri.parse(_pokemon.results[1].url);
+      var url = Uri.parse("https://pokeapi.co/api/v2/pokemon/1/");
       var response = await http.get(url);
       if (response.statusCode == 200) {
-        pokemonsModel = pokemonFromJson(response.body);
-        return pokemonsModel;
+        pokemonDataModel = pokemonDataFromJson(response.body);
+        return pokemonDataModel;
       }
     } catch (e) {
       log(e.toString());
