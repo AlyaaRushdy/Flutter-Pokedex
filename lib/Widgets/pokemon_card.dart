@@ -51,7 +51,7 @@ class PokemonCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "#$pokemonId   $pokemonImg",
+                    "#$pokemonId",
                     style: TextStyle(
                       color: grayTextColor,
                     ),
